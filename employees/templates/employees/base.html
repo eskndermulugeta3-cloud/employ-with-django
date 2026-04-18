@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee System</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background: #f4f7fb;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 220px;
+            height: 100vh;
+            background: #1e293b;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: #cbd5e1;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+
+        .sidebar a:hover {
+            color: white;
+        }
+
+        /* MAIN */
+        .main {
+            flex: 1;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 8px 12px;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            font-size: 14px;
+        }
+
+        .btn-add { background: #22c55e; }
+        .btn-edit { background: #3b82f6; }
+        .btn-delete { background: #ef4444; }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>EMS</h2>
+    <a href="/">Dashboard</a>
+    <a href="/employees/">Employees</a>
+    <a href="/add/">Add Employee</a>
+    <a href="/logout/">Logout</a>
+</div>
+
+<div class="main">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>

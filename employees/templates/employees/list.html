@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees</title>
+</head>
+
+<body style="margin:0; font-family:Segoe UI; background:#f4f6f9;">
+
+<div style="display:flex; height:100vh;">
+
+    <!-- SIDEBAR -->
+    <div style="
+        width:220px;
+        background:#0f172a;
+        color:white;
+        padding:20px;
+    ">
+        <h2>EMS</h2>
+        <hr style="border:1px solid #334155;">
+
+        <p><a href="/" style="color:white; text-decoration:none;">🏠 Dashboard</a></p>
+        <p><a href="/add/" style="color:white; text-decoration:none;">➕ Add Employee</a></p>
+        <p><a href="/logout/" style="color:#f87171; text-decoration:none;">🚪 Logout</a></p>
+    </div>
+
+    <!-- CONTENT -->
+    <div style="flex:1; padding:30px;">
+
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+            <h2>Employee List</h2>
+
+            <a href="/add/" style="
+                background:#22c55e;
+                color:white;
+                padding:10px 15px;
+                border-radius:8px;
+                text-decoration:none;
+            ">
+                + Add Employee
+            </a>
+        </div>
+
+        <!-- TABLE -->
+        <div style="margin-top:20px; background:white; padding:20px; border-radius:10px;">
+
+            <table style="width:100%; border-collapse:collapse;">
+                <tr style="background:#e2e8f0;">
+                    <th style="padding:10px;">Name</th>
+                    <th>Email</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+
+                {% for emp in employees %}
+                <tr style="border-top:1px solid #ddd;">
+                    <td style="padding:10px;">{{ emp.name }}</td>
+                    <td>{{ emp.email }}</td>
+                    <td>{{ emp.position }}</td>
+                    <td>
+                        <a href="/update/{{ emp.id }}/" style="color:#2563eb;">Edit</a> |
+                        <a href="/delete/{{ emp.id }}/" style="color:#dc2626;">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
